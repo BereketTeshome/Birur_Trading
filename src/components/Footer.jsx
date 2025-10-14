@@ -1,5 +1,6 @@
 import React from 'react'
 import FooterBg from '../assets/coffee-footer.jpg'
+import Logo from "../../public/logo.png"
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const FooterLinks = [
@@ -14,10 +15,6 @@ const FooterLinks = [
     {
         title: "Contact",
         link: "/#contact",
-    },
-    {
-        title: "Blog",
-        link: "/#blog",
     },
 ];
 
@@ -34,54 +31,57 @@ const Footer = () => {
     return (
         <div style={bgImage} className='text-white'>
             <div className='bg-black/40 min-h-[400px]'>
-                <div className='max-w-7xl mx-auto grid md:grid-cols-3 pb-20 pt-5'>
+                <div className='grid pt-5 pb-20 mx-auto max-w-7xl md:grid-cols-3'>
                     {/* company details */}
-                    <div className='py-8 px-4'>
-                        <a href="#" className='font-semibold tracking-widest text-2xl sm:text-3xl font-cursive'>Brew Haven</a>
-                        <p className='pt-4'>Crafted Coffee, Cozy Vibes, Unforgettable Moments – Your Perfect Espresso Escape</p>
-                        <a href="https://www.youtube.com/@WebeliteBuilders" target='_blank' className='inline-block bg-[#3d2517] py-2 px-4 mt-5 text-sm rounded-full'>Visit our YouTube Channel</a>
+                    <div className='px-4 py-8'>
+                        <div className='flex items-center'>
+                            <img src={Logo} alt="footer logo" className='w-24 h-20' />
+                            <h1 className='text-2xl text-white font-cursive'>Birur Trading</h1>
+                        </div>
+                        {/* <a href="#" className='text-2xl font-semibold tracking-widest sm:text-3xl font-cursive'>Birur Trading</a> */}
+                        <p className='pt-4'>We specialize in sourcing premium Ethiopian beans – High quality cereals</p>                        
                     </div>
                     {/* footer links */}
-                    <div className='col-span-2 grid grid-cols-2 sm:grid-cols-3 md:pl-10'>
-                        <div className='py-8 px-4'>
-                            <h1 className='text-xl font-semibold sm:text-left mb-3'>Important Links</h1>
+                    <div className='grid grid-cols-2 col-span-2 sm:grid-cols-3 md:pl-10'>
+                        <div className='px-4 py-8'>
+                            <h1 className='mb-3 text-xl font-semibold sm:text-left'>Important Links</h1>
                             <ul className='space-y-3'>
                                 {FooterLinks.map((data, index) => (
                                     <li key={index}>
-                                        <a href={data.link} className='inline-block hover:scale-105 duration-200'>{data.title}</a>
+                                        <a href={data.link} className='inline-block duration-200 hover:scale-105'>{data.title}</a>
                                     </li>
                                 ))}
                             </ul>
                         </div>
                         {/* second col links */}
-                        <div className='py-8 px-4'>
-                            <h1 className='text-xl font-semibold sm:text-left mb-3'>
+                        <div className='hidden px-4 py-8'>
+                            <h1 className='mb-3 text-xl font-semibold sm:text-left'>
                                 Quick Links
                             </h1>
                             <ul className='space-y-3'>
                                 {FooterLinks.map((data, index) => (
                                     <li key={index}>
-                                        <a href={data.link} className='inline-block hover:scale-105 duration-200'>{data.title}</a>
+                                        <a href={data.link} className='inline-block duration-200 hover:scale-105'>{data.title}</a>
                                     </li>
                                 ))}
                             </ul>
                         </div>
                         {/* company address */}
-                        <div className='py-8 px-4 col-span-2 sm:col-auto'>
-                            <h1 className='text-xl font-semibold sm:text-left mb-3'>Address</h1>
+                        <div className='col-span-2 px-4 py-8 sm:col-auto'>
+                            <h1 className='mb-3 text-xl font-semibold sm:text-left'>Address</h1>
                             <div>
-                                <p className='mb-3'>Kolkata, West Bengal</p>
-                                <p>+91 12345467890</p>
+                                <p className='mb-3'>Addis Ababa, Ethiopia</p>
+                                <p>+251 911524316</p>
                                 {/* social links */}
                                 <div className='flex items-center gap-3 mt-6'>
                                     <a href="#">
-                                        <FaInstagram className='text-3xl hover:text-amber-900 duration-300' />
+                                        <FaInstagram className='text-3xl duration-300 hover:text-amber-900' />
                                     </a>
                                     <a href="#">
-                                        <FaFacebook className='text-3xl hover:text-amber-900 duration-300' />
+                                        <FaFacebook className='text-3xl duration-300 hover:text-amber-900' />
                                     </a>
                                     <a href="#">
-                                        <FaLinkedin className='text-3xl hover:text-amber-900 duration-300' />
+                                        <FaLinkedin className='text-3xl duration-300 hover:text-amber-900' />
                                     </a>
                                 </div>
                             </div>
