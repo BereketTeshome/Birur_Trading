@@ -1,136 +1,63 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from 'framer-motion';
-import { X } from "lucide-react"; // close icon (optional, install `lucide-react`)
+import { X } from "lucide-react";
 
+// ✅ Import all images from src/assets (or adjust path if different)
+import img1 from "../../public/1.jpg";
+import img2 from "../../public/2.jpg";
+import img3 from "../../public/3.jpg";
+import img4 from "../../public/4.jpg";
+import img5 from "../../public/5.jpg";
+import img6 from "../../public/6.jpg";
+import img7 from "../../public/7.jpg";
+import img8 from "../../public/8.jpg";
+import img9 from "../../public/9.jpg";
+import img10 from "../../public/10.jpg";
+import img11 from "../../public/11.jpg";
+import img12 from "../../public/12.jpg";
+import img13 from "../../public/13.jpg";
+import img14 from "../../public/14.jpg";
+import img15 from "../../public/15.jpg";
+import img16 from "../../public/16.jpg";
+import img17 from "../../public/17.jpg";
+import img18 from "../../public/18.jpg";
+import img19 from "../../public/19.jpg";
+import img20 from "../../public/20.jpg";
+import img21 from "../../public/21.jpg";
+import img22 from "../../public/22.jpg";
+import img23 from "../../public/23.jpg";
+import img24 from "../../public/24.jpg";
+import img25 from "../../public/25.jpg";
 
-const TestimonialData = [{
-    id: 1,    
-    text: "Coffee Beans",
-    img: "../../public/1.jpg",
-},
-{
-    id: 2,    
-    text: "Red Kidney Beans",
-    img: "../../public/2.jpg",
-},
-{
-    id: 3,    
-    text: "Coffee Beans",
-    img: "../../public/3.jpg",
-},
-{
-    id: 4,    
-    text: "Coffee Beans",
-    img: "../../public/4.jpg",
-},
-{
-    id: 5,    
-    text: "Mustard Seed",
-    img: "../../public/5.jpg",
-},
-{
-    id: 6,    
-    text: "Sesame Seed",
-    img: "../../public/6.jpg",
-},
-{
-    id: 7,    
-    text: "Sesame Seed",
-    img: "../../public/7.jpg",
-},
-{
-    id: 8,    
-    text: "Mung Beans",
-    img: "../../public/8.jpg",
-},
-{
-    id: 9,    
-    text: "Lupin Beans",
-    img: "../../public/9.jpg",
-},
-{
-    id: 10,    
-    text: "Jack Fruit Seeds",
-    img: "../../public/10.jpg",
-},
-{
-    id: 11,    
-    text: "Chick Peas",
-    img: "../../public/11.jpg",
-},
-{
-    id: 12,    
-    text: "Pigeon Peas",
-    img: "../../public/12.jpg",
-},
-{
-    id: 13,    
-    text: "Pigeon Peas",
-    img: "../../public/13.jpg",
-},
-{
-    id: 14,    
-    text: "Mix Display",
-    img: "../../public/14.jpg",
-},
-{
-    id: 15,    
-    text: "Maize",
-    img: "../../public/15.jpg",
-},
-{
-    id: 16,    
-    text: "Red Kidney Beans",
-    img: "../../public/16.jpg",
-},
-{
-    id: 17,    
-    text: "Black Beans",
-    img: "../../public/17.jpg",
-},
-{
-    id: 18,    
-    text: "Chick Pea",
-    img: "../../public/18.jpg",
-},
-{
-    id: 19,    
-    text: "Sesame Seed",
-    img: "../../public/19.jpg",
-},
-{
-    id: 20,    
-    text: "Coffee Beans",
-    img: "../../public/20.jpg",
-},
-{
-    id: 21,    
-    text: "Sesame Seed",
-    img: "../../public/21.jpg",
-},
-{
-    id: 22,    
-    text: "Red Kidney Beans",
-    img: "../../public/22.jpg",
-},
-{
-    id: 23,    
-    text: "Pinto Beans",
-    img: "../../public/23.jpg",
-},
-{
-    id: 24,    
-    text: "Mung Beans",
-    img: "../../public/24.jpg",
-},
-{
-    id: 25,    
-    text: "Chick Peas",
-    img: "../../public/25.jpg",
-},
+const TestimonialData = [
+  { id: 1, text: "Coffee Beans", img: img1 },
+  { id: 2, text: "Red Kidney Beans", img: img2 },
+  { id: 3, text: "Coffee Beans", img: img3 },
+  { id: 4, text: "Coffee Beans", img: img4 },
+  { id: 5, text: "Mustard Seed", img: img5 },
+  { id: 6, text: "Sesame Seed", img: img6 },
+  { id: 7, text: "Sesame Seed", img: img7 },
+  { id: 8, text: "Mung Beans", img: img8 },
+  { id: 9, text: "Lupin Beans", img: img9 },
+  { id: 10, text: "Jack Fruit Seeds", img: img10 },
+  { id: 11, text: "Chick Peas", img: img11 },
+  { id: 12, text: "Pigeon Peas", img: img12 },
+  { id: 13, text: "Pigeon Peas", img: img13 },
+  { id: 14, text: "Mix Display", img: img14 },
+  { id: 15, text: "Maize", img: img15 },
+  { id: 16, text: "Red Kidney Beans", img: img16 },
+  { id: 17, text: "Black Beans", img: img17 },
+  { id: 18, text: "Chick Pea", img: img18 },
+  { id: 19, text: "Sesame Seed", img: img19 },
+  { id: 20, text: "Coffee Beans", img: img20 },
+  { id: 21, text: "Sesame Seed", img: img21 },
+  { id: 22, text: "Red Kidney Beans", img: img22 },
+  { id: 23, text: "Pinto Beans", img: img23 },
+  { id: 24, text: "Mung Beans", img: img24 },
+  { id: 25, text: "Chick Peas", img: img25 },
 ];
 
 const Testimonials = () => {
