@@ -64,10 +64,10 @@ const Testimonials = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const socket = io("http://localhost:5000");
+    const socket = io("https://birur-trading-backend.vercel.app");
 
     const fetchProducts = () => {
-      fetch("http://localhost:5000/api/cereals")
+      fetch("https://birur-trading-backend.vercel.app/api/cereals")
         .then((res) => res.json())
         .then((data) => setProducts(data))
         .catch((err) => console.error(err));
@@ -127,7 +127,7 @@ const Testimonials = () => {
                     className="cursor-pointer"
                     onClick={() =>
                       setSelectedImage(
-                        `http://localhost:5000${data.media}?t=${Date.now()}`,
+                        `https://birur-trading-backend.vercel.app${data.media}?t=${Date.now()}`,
                       )
                     }
                   >
@@ -136,11 +136,13 @@ const Testimonials = () => {
                         className="w-full h-[320px] object-cover rounded-md"
                         controls
                       >
-                        <source src={`http://localhost:5000${data.media}`} />
+                        <source
+                          src={`https://birur-trading-backend.vercel.app${data.media}`}
+                        />
                       </video>
                     ) : (
                       <img
-                        src={`http://localhost:5000${data.media}`}
+                        src={`https://birur-trading-backend.vercel.app${data.media}`}
                         alt={data.name}
                         className="w-full h-[320px] object-cover rounded-md"
                       />

@@ -78,11 +78,13 @@ function ProductManager({ refresh, setRefresh }) {
           >
             {item.media?.endsWith(".mp4") ? (
               <video width="100%" controls>
-                <source src={`http://localhost:5000${item.media}`} />
+                <source
+                  src={`https://birur-trading-backend.vercel.app${item.media}`}
+                />
               </video>
             ) : (
               <img
-                src={`http://localhost:5000${item.media}`}
+                src={`https://birur-trading-backend.vercel.app${item.media}`}
                 alt=""
                 style={{
                   width: "100%",
