@@ -1,7 +1,5 @@
-import React from 'react'
-import Img1 from '../assets/coffee-white.png'
-import Img2 from '../assets/coffee2.png'
-import { motion } from 'framer-motion'
+import Img1 from "../assets/coffee-white.png";
+import Img2 from "../assets/coffee2.png";
 
 const CoffeeData = [
   {
@@ -85,55 +83,46 @@ const CoffeeData = [
 
 const CoffeeVarieties = () => {
   return (
-    <div id='coffee' className='py-20'>
-      <div className='mx-auto max-w-7xl'>
+    <div id="coffee" className="py-20">
+      <div className="mx-auto max-w-7xl">
         {/* Heading section */}
-        <div className='mb-20 text-center'>
-          <motion.h1 
-            initial={{opacity:0, y:100}}
-            whileInView={{opacity:1, y:0}}
-            transition={{duration:1.5, delay:0.5}}
-            className='text-4xl font-bold font-cursive text-amber-900'
-          >
+        <div className="mb-20 text-center" id="menu">
+          <h1 className="text-4xl font-bold font-cursive text-amber-900">
             Our Export Coffee Varieties
-          </motion.h1>
-          <p className='max-w-2xl mx-auto mt-4 text-gray-600'>
-            We proudly export some of the world’s finest Ethiopian coffee beans, 
-            carefully selected and processed to meet international quality standards.
+          </h1>
+          <p className="max-w-2xl mx-auto mt-4 text-gray-600">
+            We proudly export some of the world’s finest Ethiopian coffee beans,
+            carefully selected and processed to meet international quality
+            standards.
           </p>
         </div>
 
         {/* Coffee varieties section */}
-        <motion.div 
-          initial={{opacity:0, y:100}}
-          whileInView={{opacity:1, y:0}}
-          transition={{duration:1.5, delay:0.5}}
-          className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 md:gap-5 place-items-center'
-        >
-          {CoffeeData.map((coffee)=> (
-            <div 
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 md:gap-5 place-items-center">
+          {CoffeeData.map((coffee) => (
+            <div
               key={coffee.id}
-              className='rounded-2xl mb-10 bg-white hover:bg-amber-900 transition-all hover:text-white relative shadow-xl duration-300 group max-w-[300px]'
+              className="rounded-2xl mb-10 bg-white hover:bg-amber-900 transition-all hover:text-white relative shadow-xl duration-300 group max-w-[300px]"
             >
-              <div className='h-[122px]'>
-                <img 
-                  src={coffee.img} 
-                  alt={coffee.name} 
-                  className='max-w-[200px] block mx-auto transform -translate-y-14 group-hover:scale-105 group-hover:rotate-6 duration-300'
+              <div className="h-[122px]">
+                <img
+                  src={coffee.img}
+                  alt={coffee.name}
+                  className="max-w-[200px] block mx-auto transform -translate-y-14 group-hover:scale-105 group-hover:rotate-6 duration-300"
                 />
               </div>
-              <div className='p-4 text-center'>
-                <h1 className='text-xl font-bold'>{coffee.name}</h1>
-                <p className='text-sm text-gray-500 duration-300 group-hover:text-white line-clamp-3'>
+              <div className="p-4 text-center">
+                <h1 className="text-xl font-bold">{coffee.name}</h1>
+                <p className="text-sm text-gray-500 duration-300 group-hover:text-white line-clamp-3">
                   {coffee.description}
                 </p>
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CoffeeVarieties
+export default CoffeeVarieties;
