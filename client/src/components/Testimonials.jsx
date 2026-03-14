@@ -64,10 +64,10 @@ const Testimonials = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const socket = io("https://birur-trading-backend.onrender.com");
+    const socket = io("https://birurtrading.com");
 
     const fetchProducts = () => {
-      fetch("https://birur-trading-backend.onrender.com/api/cereals")
+      fetch("https://birurtrading.com/api/cereals")
         .then((res) => res.json())
         .then((data) => setProducts(data))
         .catch((err) => console.error(err));
@@ -127,7 +127,7 @@ const Testimonials = () => {
                     className="cursor-pointer"
                     onClick={() =>
                       setSelectedImage(
-                        `https://birur-trading-backend.onrender.com${data.media}?t=${Date.now()}`,
+                        `https://birurtrading.com${data.media}?t=${Date.now()}`,
                       )
                     }
                   >
@@ -136,13 +136,11 @@ const Testimonials = () => {
                         className="w-full h-[320px] object-cover rounded-md"
                         controls
                       >
-                        <source
-                          src={`https://birur-trading-backend.onrender.com${data.media}`}
-                        />
+                        <source src={`https://birurtrading.com${data.media}`} />
                       </video>
                     ) : (
                       <img
-                        src={`https://birur-trading-backend.onrender.com${data.media}`}
+                        src={`https://birurtrading.com${data.media}`}
                         alt={data.name}
                         className="w-full h-[320px] object-cover rounded-md"
                       />

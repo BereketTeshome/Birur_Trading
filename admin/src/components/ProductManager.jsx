@@ -78,13 +78,11 @@ function ProductManager({ refresh, setRefresh }) {
           >
             {item.media?.endsWith(".mp4") ? (
               <video width="100%" controls>
-                <source
-                  src={`https://birur-trading-backend.onrender.com${item.media}`}
-                />
+                <source src={`https://birurtrading.com${item.media}`} />
               </video>
             ) : (
               <img
-                src={`https://birur-trading-backend.onrender.com${item.media}`}
+                src={`https://birurtrading.com${item.media}`}
                 alt=""
                 style={{
                   width: "100%",
