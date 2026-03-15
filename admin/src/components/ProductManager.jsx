@@ -21,7 +21,7 @@ function ProductManager({ refresh, setRefresh }) {
 
     await api.delete(`/cereals/${id}`);
 
-    fetchProducts();
+    window.location.reload();
   };
 
   const startEdit = (item) => {
@@ -42,7 +42,7 @@ function ProductManager({ refresh, setRefresh }) {
 
     await api.put(`/cereals/${editing}`, formData);
 
-    fetchProducts();
+    window.location.reload();
   };
 
   return (
