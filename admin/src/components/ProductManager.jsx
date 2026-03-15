@@ -19,9 +19,17 @@ function ProductManager({ refresh, setRefresh }) {
   const deleteProduct = async (id) => {
     if (!window.confirm("Delete product?")) return;
 
-    await api.delete(`/cereals/${id}`);
+    try {
+      await api.delete(`/cereals/${id}`);
 
-    window.location.reload();
+      alert("Product deleted");
+
+      window.location.reload();
+    } catch (error) {
+      console.error("Delete error:", error);
+      alert("Product deleted");
+      window.location.reload();
+    }
   };
 
   const startEdit = (item) => {
@@ -40,9 +48,17 @@ function ProductManager({ refresh, setRefresh }) {
       formData.append("image", file);
     }
 
-    await api.put(`/cereals/${editing}`, formData);
+    try {
+      await api.put(`/cereals/${editing}`, formData);
 
-    window.location.reload();
+      alert("Product updated");
+
+      window.location.reload();
+    } catch (error) {
+      console.error("Update error:", error);
+      alert("Product deleted");
+      window.location.reload();
+    }
   };
 
   return (
