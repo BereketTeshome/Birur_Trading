@@ -17,11 +17,10 @@ function App() {
     await api.post("/cereals", formData);
 
     alert("Product uploaded ☕");
+    window.location.reload();
 
     setName("");
     setImage(null);
-
-    setRefresh(!refresh);
   };
 
   return (
