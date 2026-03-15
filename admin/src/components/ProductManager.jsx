@@ -21,13 +21,9 @@ function ProductManager({ refresh, setRefresh }) {
 
     try {
       await api.delete(`/cereals/${id}`);
-
-      alert("Product deleted");
-
       window.location.reload();
     } catch (error) {
       console.error("Delete error:", error);
-      alert("Product deleted");
       window.location.reload();
     }
   };
@@ -50,13 +46,9 @@ function ProductManager({ refresh, setRefresh }) {
 
     try {
       await api.put(`/cereals/${editing}`, formData);
-
-      alert("Product updated");
-
       window.location.reload();
     } catch (error) {
       console.error("Update error:", error);
-      alert("Product deleted");
       window.location.reload();
     }
   };
