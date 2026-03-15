@@ -7,24 +7,25 @@ function App() {
   const [image, setImage] = useState(null);
   const [refresh, setRefresh] = useState(false);
 
-const submit = async (e) => {
-  e.preventDefault();
+  const submit = async (e) => {
+    e.preventDefault();
 
-  const formData = new FormData();
-  formData.append("name", name);
-  formData.append("image", image);
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("image", image);
 
-  try {
-    await api.post("/cereals", formData);
+    try {
+      await api.post("/cereals", formData);
 
-    alert("Product uploaded ☕");
+      alert("Product uploaded ☕");
 
-    window.location.reload();
-  } catch () {
-    alert("Product uploaded ☕");
-    window.location.reload();
-  }
-};
+      window.location.reload();
+    } catch (error) {
+      console.log("upload error: ", error);
+      alert("Product uploaded ☕");
+      window.location.reload();
+    }
+  };
 
   return (
     <div
